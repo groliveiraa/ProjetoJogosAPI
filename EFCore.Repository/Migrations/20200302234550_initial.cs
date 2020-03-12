@@ -35,6 +35,22 @@ namespace EFCore.Repository.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Jogos",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Nome = table.Column<string>(nullable: true),
+                    GeneroId = table.Column<int>(nullable: false),
+                    ClassificacaoId = table.Column<int>(nullable: false),
+                    DtCadastro = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Jogos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "VideoGames",
                 columns: table => new
                 {
@@ -45,29 +61,6 @@ namespace EFCore.Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_VideoGames", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Jogos",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(nullable: true),
-                    GeneroId = table.Column<int>(nullable: false),
-                    ClassificacaoId = table.Column<int>(nullable: false),
-                    DtCadastro = table.Column<DateTime>(nullable: false),
-                    VideoGameId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Jogos", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Jogos_VideoGames_VideoGameId",
-                        column: x => x.VideoGameId,
-                        principalTable: "VideoGames",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -98,11 +91,6 @@ namespace EFCore.Repository.Migrations
                 name: "IX_JogoConsoles_JogoId",
                 table: "JogoConsoles",
                 column: "JogoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Jogos_VideoGameId",
-                table: "Jogos",
-                column: "VideoGameId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

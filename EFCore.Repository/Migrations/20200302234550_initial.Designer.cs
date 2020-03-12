@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Repository.Migrations
 {
     [DbContext(typeof(JogoContext))]
-    [Migration("20200218232442_initial")]
+    [Migration("20200302234550_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -61,11 +61,7 @@ namespace EFCore.Repository.Migrations
 
                     b.Property<string>("Nome");
 
-                    b.Property<int?>("VideoGameId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("VideoGameId");
 
                     b.ToTable("Jogos");
                 });
@@ -94,13 +90,6 @@ namespace EFCore.Repository.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("VideoGames");
-                });
-
-            modelBuilder.Entity("EFCore.Domain.Jogo", b =>
-                {
-                    b.HasOne("EFCore.Domain.VideoGame")
-                        .WithMany("Jogos")
-                        .HasForeignKey("VideoGameId");
                 });
 
             modelBuilder.Entity("EFCore.Domain.JogoConsole", b =>

@@ -8,7 +8,7 @@ namespace EFCore.Domain
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public List<Jogo> Jogos { get; set; }
-        public List<JogoConsole> JogosConsoles { get; set; }
+        //public List<Jogo> Jogos { get; set; }
+        public virtual List<JogoConsole> JogosConsoles { get; set; }
     }
 }

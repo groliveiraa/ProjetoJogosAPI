@@ -4,14 +4,16 @@ using EFCore.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EFCore.Repository.Migrations
 {
     [DbContext(typeof(JogoContext))]
-    partial class JogoContextModelSnapshot : ModelSnapshot
+    [Migration("20200322004110_AlterModel_Jogos")]
+    partial class AlterModel_Jogos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

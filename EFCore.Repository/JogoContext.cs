@@ -13,7 +13,7 @@ namespace EFCore.Repository
         public DbSet<Jogo> Jogos { get; set; }
         public DbSet<VideoGame> VideoGames { get; set; }
         public DbSet<Genero> Generos { get; set; }
-        public DbSet<ClassificacaoIndicativa> ClassificacaoIndicativas { get; set; }
+        public DbSet<ClassificacaoIndicativa> Classificacoes { get; set; }
         public DbSet<JogoConsole> JogoConsoles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

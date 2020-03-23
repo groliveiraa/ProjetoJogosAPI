@@ -17,6 +17,12 @@
     <Compile Remove="Migrations\20200218231302_initial.Designer.cs" />
     <Compile Remove="Migrations\20200218232442_initial.cs" />
     <Compile Remove="Migrations\20200218232442_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200314150612_AlterModel_Jogos.cs" />
+    <Compile Remove="Migrations\20200314150612_AlterModel_Jogos.Designer.cs" />
+    <Compile Remove="Migrations\20200321233651_AlterModel_Jogos.cs" />
+    <Compile Remove="Migrations\20200321233651_AlterModel_Jogos.Designer.cs" />
+    <Compile Remove="Migrations\20200322001549_AlterModel_Jogos.cs" />
+    <Compile Remove="Migrations\20200322001549_AlterModel_Jogos.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

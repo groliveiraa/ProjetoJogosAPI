@@ -39,8 +39,8 @@ namespace EFCore.Repository
         public async Task<Jogo[]> GetAllJogos(bool incluirConsole = false)
         {
             IQueryable<Jogo> query = _context.Jogos
-                .Include(h => h.GeneroId)
-                .Include(h => h.ClassificacaoId);
+                .Include(h => h.Generos)
+                .Include(h => h.Classificacoes);
 
             if (incluirConsole)
             {
@@ -55,8 +55,8 @@ namespace EFCore.Repository
         public async Task<Jogo> GetJogoById(int id, bool incluirConsole = false)
         {
             IQueryable<Jogo> query = _context.Jogos
-                .Include(h => h.GeneroId)
-                .Include(h => h.ClassificacaoId);
+                .Include(h => h.Generos)
+                .Include(h => h.Classificacoes);
 
             if (incluirConsole)
             {
@@ -71,8 +71,8 @@ namespace EFCore.Repository
         public async Task<Jogo[]> GetJogoByNome(string nome, bool incluirConsole = false)
         {
             IQueryable<Jogo> query = _context.Jogos
-                .Include(h => h.GeneroId)
-                .Include(h => h.ClassificacaoId);
+                .Include(h => h.Generos)
+                .Include(h => h.Classificacoes);
 
             if (incluirConsole)
             {
